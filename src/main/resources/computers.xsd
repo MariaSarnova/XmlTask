@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/computers"
+        xmlns:tns="http://www.example.com/computers"
+        elementFormDefault="qualified">
+
+
+    <element name="device" type="tns:Device" />
+    <element name="monitor" type="tns:Monitor" substitutionGroup="tns:device" />
+
+
+    <element name="computers">
+        <complexType>
+            <sequence>
+                <element ref="tns:device" minOccurs="2" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+
+
+    <complexType name="Device">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="origin" type="string" />
+            <element name="price" type="positiveInteger" />
+            <element name="devices-types" type="tns:DevicesTypes" />
+        </sequence>
+        <attribute name="id" use="required">
+            <simpleType>
+                <restriction base="ID">
+                    <pattern value="[dm]\d{1,2}" />
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+
+    <complexType name="DevicesTypes">
+        <sequence>
+            <element name="energy-consumption" type="positiveInteger" />
+            <element name="group-of-components" type="string" />
+        </sequence>
+    </complexType>
+
+
+    <complexType name="Monitor">
+        <complexContent>
+            <extension base="tns:Device">
+                <sequence>
+                    <element name="screen-size" type="positiveInteger" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+
+</schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<computers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/computers"
+          xsi:schemaLocation="http://www.example.com/orangery computers.xsd">
+
+
+    <device id="d01">
+        <name>pc</name>
+        <origin>USA</origin>
+        <price>1000</price>
+        <devices-types>
+            <energy-consumption>13000</energy-consumption>
+            <group-of-components>multimedia</group-of-components>
+        </devices-types>
+    </device>
+
+    <device id="d02">
+        <name>notebook</name>
+        <origin>Russia</origin>
+        <price>1000</price>
+        <devices-types>
+            <energy-consumption>13000</energy-consumption>
+            <group-of-components>multimedia</group-of-components>
+        </devices-types>
+    </device>
+
+    <monitor id="m01">
+        <name>display5000</name>
+        <origin>Russia</origin>
+        <price>800</price>
+        <devices-types>
+            <energy-consumption>1000</energy-consumption>
+            <group-of-components>multimedia</group-of-components>
+        </devices-types>
+        <screen-size>23</screen-size>
+    </monitor>
+
+    <monitor id="m02">
+        <name>display20</name>
+        <origin>Ukraine</origin>
+        <price>500</price>
+        <devices-types>
+            <energy-consumption>700</energy-consumption>
+            <group-of-components>multimedia</group-of-components>
+        </devices-types>
+        <screen-size>20</screen-size>
+    </monitor>
+
+</computers>

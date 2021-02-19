@@ -2,21 +2,19 @@ package com.epam.task.fourth.entity;
 
 import java.util.Objects;
 
-public abstract class Devices {
+public class Device {
     private final int id;
     private String name;
     private String origin;
-    private double price;
+    private int price;
     private DevicesTypes type;
-    private boolean critical;
 
-    public Devices(int id,String name,String origin,double price,DevicesTypes type, boolean critical){
+    public Device(int id, String name, String origin, int price, DevicesTypes type){
         this.id=id;
         this.name=name;
         this.origin=origin;
         this.price=price;
         this.type=type;
-        this.critical=critical;
     }
 
     public int getID() {
@@ -31,7 +29,7 @@ public abstract class Devices {
         return origin;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -39,9 +37,7 @@ public abstract class Devices {
         return type;
     }
 
-    public boolean getCritical(){
-        return critical;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -51,10 +47,9 @@ public abstract class Devices {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Devices devices = (Devices) o;
+        Device devices = (Device) o;
         return id == devices.id &&
                 Double.compare(devices.price, price) == 0 &&
-                critical == devices.critical &&
                 Objects.equals(name, devices.name) &&
                 Objects.equals(origin, devices.origin) &&
                 Objects.equals(type, devices.type);
@@ -62,7 +57,7 @@ public abstract class Devices {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, origin, price, type, critical);
+        return Objects.hash(id, name, origin, price, type);
     }
 
     @Override
@@ -73,7 +68,6 @@ public abstract class Devices {
                 ", origin='" + origin + '\'' +
                 ", price=" + price +
                 ", type=" + type +
-                ", critical=" + critical +
                 '}';
     }
 }

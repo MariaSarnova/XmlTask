@@ -2,15 +2,15 @@ package com.epam.task.fourth.entity;
 
 import java.util.Objects;
 
-public class Monitor extends Devices{
-    private double screenSize;
+public class Monitor extends Device {
+    private int screenSize;
 
-    public Monitor(int ID,String name,String origin,double price,DevicesTypes type, boolean critical,double screenSize){
-        super(ID,name,origin,price,type,critical);
+    public Monitor(int ID,String name,String origin,int price,DevicesTypes type,int screenSize){
+        super(ID,name,origin,price,type);
         this.screenSize=screenSize;
     }
 
-    public double getScreenSize() {
+    public int getScreenSize() {
         return screenSize;
     }
 
