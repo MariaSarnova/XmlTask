@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <computers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xmlns="http://www.example.com/computers"
-          xsi:schemaLocation="http://www.example.com/orangery computers.xsd">
+          xsi:schemaLocation="http://www.example.com/computers computers.xsd">
 
 
     <device id="d01">
@@ -32,7 +32,6 @@
             <energy-consumption>1000</energy-consumption>
             <group-of-components>multimedia</group-of-components>
         </devices-types>
-        <screen-size>23</screen-size>
     </monitor>
 
     <monitor id="m02">
@@ -43,7 +42,6 @@
             <energy-consumption>700</energy-consumption>
             <group-of-components>multimedia</group-of-components>
         </devices-types>
-        <screen-size>20</screen-size>
     </monitor>
 
 </computers>

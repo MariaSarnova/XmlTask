@@ -1,36 +1,42 @@
 package com.epam.task.fourth.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Objects;
-
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType
 public class Monitor extends Device {
-    private int screenSize;
+    @XmlAttribute
+    protected boolean colored;
 
-    public Monitor(int ID,String name,String origin,int price,DevicesTypes type,int screenSize){
+    public Monitor(){}
+
+    public Monitor(String ID,String name,String origin,int price,DevicesTypes type,boolean colored){
         super(ID,name,origin,price,type);
-        this.screenSize=screenSize;
+        this.colored=colored;
     }
 
-    public int getScreenSize() {
-        return screenSize;
+    public boolean getColored() {
+        return colored;
+    }
+
+    public void setColored(boolean colored) {
+        this.colored = colored;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        if (!super.equals(o)) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Monitor monitor = (Monitor) o;
-        return Double.compare(monitor.screenSize, screenSize) == 0;
+        return colored == monitor.colored;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), screenSize);
+        return Objects.hash(super.hashCode(), colored);
     }
 }

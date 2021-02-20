@@ -46,9 +46,7 @@
     <complexType name="Monitor">
         <complexContent>
             <extension base="tns:Device">
-                <sequence>
-                    <element name="screen-size" type="positiveInteger" />
-                </sequence>
+                <attribute name="colored" type="boolean" use="optional" default="false"/>
             </extension>
         </complexContent>
     </complexType>

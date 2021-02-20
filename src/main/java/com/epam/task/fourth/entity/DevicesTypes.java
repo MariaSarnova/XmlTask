@@ -1,10 +1,19 @@
 package com.epam.task.fourth.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Objects;
-
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType
 public class DevicesTypes {
+    @XmlElement(name = "energy-consumption", namespace = "http://www.example.com/computers")
     private int energyConsumption;
+    @XmlElement(name = "group-of-components", namespace = "http://www.example.com/computers")
     private String groupOfComponents;
+
+    public DevicesTypes(){super();}
 
     public DevicesTypes(int energyConsumption,String groupOfComponents){
         this.energyConsumption=energyConsumption;
@@ -36,7 +45,7 @@ public class DevicesTypes {
             return false;
         }
         DevicesTypes that = (DevicesTypes) o;
-        return Double.compare(that.energyConsumption, energyConsumption) == 0 &&
+        return energyConsumption == that.energyConsumption &&
                 Objects.equals(groupOfComponents, that.groupOfComponents);
     }
 
